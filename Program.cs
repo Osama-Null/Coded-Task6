@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Runtime.CompilerServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 #region Task
 // 2a & 2b
@@ -7,6 +8,7 @@ ArrayList list = ["apple"
                 , "banana"
                 , "cherry"
                 , "Wifi pinapplpe"];
+Console.WriteLine("Answer in the code!");
 
 Console.WriteLine("\n_______________________\n");
 // 2c
@@ -18,10 +20,12 @@ foreach (string item2 in list)
 Console.WriteLine("\n_______________________\n");
 // 3a
 list.Insert(2, "orange");
+Console.WriteLine("Answer in the code!");
 
 Console.WriteLine("\n_______________________\n");
 // 3b
 list.Remove(0);
+Console.WriteLine("Answer in the code!");
 
 Console.WriteLine("\n_______________________\n");
 // 3c
@@ -29,7 +33,8 @@ string fruit = "banana";
 if (list.Contains(fruit))
 {
     Console.WriteLine($"Yes, it contains banana at index {list.IndexOf(fruit)}");
-} else Console.WriteLine("No, it does not contain banana");
+}
+else Console.WriteLine("No, it does not contain banana");
 
 Console.WriteLine("\n_______________________\n");
 // 3d
@@ -54,7 +59,7 @@ ArrayList filter(ArrayList item, int threshold)
         if ((int)item[i] < threshold)
         {
             item.RemoveAt(i);
-            i++;
+            i--;
         }
     }
     return item;
@@ -64,9 +69,10 @@ ArrayList item = [23, 9, 7, 4, 1];
 Console.Write("\nEnter threshold: ");
 int threshold = Convert.ToInt32(Console.ReadLine());
 
-ArrayList filtered = filter(item, threshold);
+var filtered = filter(item, threshold);
 
-foreach (int i in filtered)
+Console.WriteLine("\nFiltered list: ");
+foreach (var i in filtered)
 {
     Console.WriteLine(i);
 }
